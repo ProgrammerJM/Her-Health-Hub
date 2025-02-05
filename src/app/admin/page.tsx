@@ -47,7 +47,7 @@ async function getProductData() {
   return { activeCount, inactiveCount };
 }
 
-export async function AdminDashboard() {
+export default async function AdminDashboard() {
   const [salesData, userData, productData] = await Promise.all([
     getSalesData(),
     getUserData(),

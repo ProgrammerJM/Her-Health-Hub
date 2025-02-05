@@ -12,17 +12,6 @@ import {
 import { db } from "@/db/db";
 import { CheckCircle2, MoreVertical, XCircle } from "lucide-react";
 import { formatCurrency, formatNumber } from "@/lib/formatters";
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuSeparator,
-  DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu";
-import {
-  ActiveToggleDropdownItem,
-  DeleteDropdownItem,
-} from "./_components/ProductActions";
 
 export default function AdminProductsPage() {
   return (
@@ -86,35 +75,7 @@ async function ProductsTable() {
             <TableCell>{product.name}</TableCell>
             <TableCell>{formatCurrency(product.priceInCents / 100)}</TableCell>
             <TableCell>{formatNumber(product._count.orders)}</TableCell>
-            <TableCell>
-              <DropdownMenu>
-                <DropdownMenuTrigger>
-                  <MoreVertical />
-                  <span className="sr-only">Actions</span>
-                </DropdownMenuTrigger>
-                <DropdownMenuContent>
-                  <DropdownMenuItem asChild>
-                    <a download href={`/admin/products/${product.id}/download`}>
-                      Download
-                    </a>
-                  </DropdownMenuItem>
-                  <DropdownMenuItem asChild>
-                    <Link href={`/admin/products/${product.id}/edit`}>
-                      Edit
-                    </Link>
-                  </DropdownMenuItem>
-                  <ActiveToggleDropdownItem
-                    id={product.id}
-                    isAvailableForPurchase={product.isAvailableForPurchase}
-                  />
-                  <DropdownMenuSeparator />
-                  <DeleteDropdownItem
-                    id={product.id}
-                    disabled={product._count.orders > 0}
-                  />
-                </DropdownMenuContent>
-              </DropdownMenu>
-            </TableCell>
+            <TableCell></TableCell>
           </TableRow>
         ))}
       </TableBody>
