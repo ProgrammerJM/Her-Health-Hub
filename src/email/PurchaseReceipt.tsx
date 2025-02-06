@@ -16,28 +16,28 @@ type PurchaseReceiptEmailProps = {
     description: string;
   };
   order: { id: string; createdAt: Date; pricePaidInCents: number };
-  downloadVerificationId: string;
+  // downloadVerificationId: string;
 };
 
 PurchaseReceiptEmail.PreviewProps = {
   product: {
-    name: "Product name",
-    description: "Some description",
-    imagePath:
-      "/products/5aba7442-e4a5-4d2e-bfa7-5bd358cdad64-02 - What Is Next.js.jpg",
+    name: "Trust",
+    description:
+      "Trust Condom (Orange) is made with natural rubber latex. It is hygienically sealed and pre-lubricated with orange-scent silicone oil for comfort. It is",
+    imagePath: "/products/e98cedb1-4ec2-469a-b01a-84f866333494-Trust.png",
   },
   order: {
     id: crypto.randomUUID(),
     createdAt: new Date(),
     pricePaidInCents: 10000,
   },
-  downloadVerificationId: crypto.randomUUID(),
+  // downloadVerificationId: crypto.randomUUID(),
 } satisfies PurchaseReceiptEmailProps;
 
 export default function PurchaseReceiptEmail({
   product,
   order,
-  downloadVerificationId,
+  // downloadVerificationId,
 }: PurchaseReceiptEmailProps) {
   return (
     <Html>
@@ -50,7 +50,7 @@ export default function PurchaseReceiptEmail({
             <OrderInformation
               order={order}
               product={product}
-              downloadVerificationId={downloadVerificationId}
+              // downloadVerificationId={downloadVerificationId}
             />
           </Container>
         </Body>
