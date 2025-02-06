@@ -56,20 +56,21 @@ export function ProductForm({ product }: { product?: Product | null }) {
           id="description"
           name="description"
           required
+          className="min-h-24"
           defaultValue={product?.description || ""}
         />
         {error.description && (
           <div className="text-destructive">{error.description}</div>
         )}
       </div>
-      <div className="space-y-2">
+      {/* <div className="space-y-2">
         <Label htmlFor="file">File</Label>
         <Input type="file" id="file" name="file" required={product === null} />
         {product != null && (
           <div className="text-muted-foreground">{product.filePath}</div>
         )}
         {error.file && <div className="text-destructive">{error.file}</div>}
-      </div>
+      </div> */}
       <div className="space-y-2">
         <Label htmlFor="image">Image</Label>
         <Input type="file" id="image" name="image" required />
