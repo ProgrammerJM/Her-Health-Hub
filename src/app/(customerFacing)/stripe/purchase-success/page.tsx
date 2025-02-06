@@ -26,9 +26,9 @@ export default async function SuccessPage({
   const isSuccess = paymentIntent.status === "succeeded";
 
   return (
-    <div className="max-w-5xl w-full mx-auto space-y-8">
+    <div className="max-w-5xl w-full mx-auto space-y-8 p-32">
       <h1 className="text-4xl font-bold">
-        {isSuccess ? "Success!" : "Error!"}
+        {isSuccess ? "Payment Successful! Thank you for buying!" : "Error!"}
       </h1>
       <div className="flex gap-4 items-center">
         <div className="aspect-video flex-shrink-0 w-1/3 relative">
@@ -47,7 +47,7 @@ export default async function SuccessPage({
           <div className="line-clamp-3 text-muted-foreground">
             {product.description}
           </div>
-          <Button className="mt-4" size="lg" asChild>
+          {/* <Button className="mt-4" size="lg" asChild>
             {isSuccess ? (
               <a
                 href={`/products/download/${await createDownloadVerification(
@@ -59,6 +59,9 @@ export default async function SuccessPage({
             ) : (
               <Link href={`/products/${product.id}/purchase`}>Try Again</Link>
             )}
+          </Button> */}
+          <Button className="mt-4" size="lg" asChild>
+            <Link href={`/`}>Go back</Link>
           </Button>
         </div>
       </div>
@@ -66,13 +69,13 @@ export default async function SuccessPage({
   );
 }
 
-async function createDownloadVerification(productId: string) {
-  return (
-    await db.downloadVerification.create({
-      data: {
-        productId,
-        expiresAt: new Date(Date.now() + 1000 * 60 * 60 * 24),
-      },
-    })
-  ).id;
-}
+// async function createDownloadVerification(productId: string) {
+//   return (
+//     await db.downloadVerification.create({
+//       data: {
+//         productId,
+//         expiresAt: new Date(Date.now() + 1000 * 60 * 60 * 24),
+//       },
+//     })
+//   ).id;
+// }

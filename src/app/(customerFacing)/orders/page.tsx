@@ -17,7 +17,7 @@ import { useFormState, useFormStatus } from "react-dom";
 export default function MyOrdersPage() {
   const [data, action] = useFormState(emailOrderHistory, {});
   return (
-    <form action={action} className="max-2-xl mx-auto">
+    <form action={action} className="max-2-xl mx-auto p-20 w-fit h-full">
       <Card>
         <CardHeader>
           <CardTitle>My Orders</CardTitle>
@@ -27,7 +27,7 @@ export default function MyOrdersPage() {
           </CardDescription>
         </CardHeader>
         <CardContent>
-          <div className="space-y-2">
+          <div className="space-y-2 w-fit">
             <Label htmlFor="email">Email</Label>
             <Input type="email" required name="email" id="email" />
             {data.error && <div className="text-destructive">{data.error}</div>}
@@ -45,7 +45,7 @@ function SubmitButton() {
   const { pending } = useFormStatus();
 
   return (
-    <Button className="w-full" size="lg" disabled={pending} type="submit">
+    <Button className="w-fit" size="lg" disabled={pending} type="submit">
       {pending ? "Sending..." : "Send"}
     </Button>
   );

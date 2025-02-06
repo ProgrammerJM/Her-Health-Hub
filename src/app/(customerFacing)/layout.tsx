@@ -15,7 +15,7 @@ export default function Layout({
         <NavLink href={"/products"}>Products</NavLink>
         <NavLink href={"/orders"}>My Orders</NavLink>
       </Nav>
-      <div className="w-full justify-center my-6 p-20">{children}</div>
+      <div className="w-full justify-center">{children}</div>
     </>
   );
 }
