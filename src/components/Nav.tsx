@@ -8,9 +8,11 @@ import React, { ComponentProps } from "react";
 
 export default function Nav({ children }: { children: React.ReactNode }) {
   return (
-    <nav className="text-black flex justify-center px-4 bg-pink-100">
+    <nav className="text-pink-500 flex justify-center px-4 bg-pink-100">
       <div className="flex justify-between items-center w-full max-w-screen-lg">
-        <Image src={"/mainLogo.png"} alt="Logo" width={40} height={40} />
+        <Link href="/">
+          <Image src={"/mainLogo.png"} alt="Logo" width={40} height={40} />
+        </Link>
       </div>
       {children}
     </nav>
