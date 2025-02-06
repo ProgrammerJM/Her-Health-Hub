@@ -11,7 +11,7 @@ import {
 type OrderInformationProps = {
   order: { id: string; createdAt: Date; pricePaidInCents: number };
   product: { imagePath: string; name: string; description: string };
-  downloadVerificationId: string;
+  // downloadVerificationId: string;
 };
 
 const dateFormatter = new Intl.DateTimeFormat("en", { dateStyle: "medium" });
@@ -19,7 +19,7 @@ const dateFormatter = new Intl.DateTimeFormat("en", { dateStyle: "medium" });
 export function OrderInformation({
   order,
   product,
-  downloadVerificationId,
+  // downloadVerificationId,
 }: OrderInformationProps) {
   return (
     <>
@@ -59,14 +59,14 @@ export function OrderInformation({
           <Column className="align-bottom">
             <Text className="text-lg font-bold m-0 mr-4">{product.name}</Text>
           </Column>
-          <Column align="right">
+          {/* <Column align="right">
             <Button
               href={`${process.env.NEXT_PUBLIC_SERVER_URL}/products/download/${downloadVerificationId}`}
               className="bg-black text-white px-6 py-4 rounded text-lg"
             >
               Download
             </Button>
-          </Column>
+          </Column> */}
         </Row>
         <Row>
           <Column>

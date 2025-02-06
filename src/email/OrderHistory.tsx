@@ -16,7 +16,7 @@ type OrderHistoryEmailProps = {
     id: string;
     pricePaidInCents: number;
     createdAt: Date;
-    downloadVerificationId: string;
+    // downloadVerificationId: string;
     product: {
       name: string;
       imagePath: string;
@@ -31,24 +31,24 @@ OrderHistoryEmail.PreviewProps = {
       id: crypto.randomUUID(),
       createdAt: new Date(),
       pricePaidInCents: 10000,
-      downloadVerificationId: crypto.randomUUID(),
+      // downloadVerificationId: crypto.randomUUID(),
       product: {
-        name: "test 1",
-        description: "HER gym wear",
-        imagePath:
-          "/products/0affff0b-75b5-44d4-83e8-f5fa79c14b9a-e-commerce her-gym-clothes 2.png",
+        name: "Trust",
+        description:
+          "Trust Condom (Orange) is made with natural rubber latex. It is hygienically sealed and pre-lubricated with orange-scent silicone oil for comfort. It is",
+        imagePath: "/products/e98cedb1-4ec2-469a-b01a-84f866333494-Trust.png",
       },
     },
     {
       id: crypto.randomUUID(),
       createdAt: new Date(),
       pricePaidInCents: 2000,
-      downloadVerificationId: crypto.randomUUID(),
+      // downloadVerificationId: crypto.randomUUID(),
       product: {
-        name: "test 2",
-        description: "just another product",
-        imagePath:
-          "/products/a295ba35-abfb-4ff5-bae0-ab1374d40dea-e-commerce-gymwear.png",
+        name: "WHISPER Super Clean and Dry 8s Wing Regular Flow",
+        description:
+          "Whisper Super Clean & Dry has up to 12 hours of leakage protection. Benefits: -Anti-leak barriers -Blue Lock Core -Dri-weave Cover",
+        imagePath: "/products/e81bb4ac-b6d8-457d-87ad-97cdf146c269-Whisper.png",
       },
     },
   ],
@@ -57,7 +57,7 @@ OrderHistoryEmail.PreviewProps = {
 export default function OrderHistoryEmail({ orders }: OrderHistoryEmailProps) {
   return (
     <Html>
-      <Preview>Order History & Downloads</Preview>
+      <Preview>Order History</Preview>
       <Tailwind>
         <Head />
         <Body className="font-sans bg-white">
@@ -68,7 +68,7 @@ export default function OrderHistoryEmail({ orders }: OrderHistoryEmailProps) {
                 <OrderInformation
                   order={order}
                   product={order.product}
-                  downloadVerificationId={order.downloadVerificationId}
+                  // downloadVerificationId={order.downloadVerificationId}
                 />
                 {index < orders.length - 1 && <Hr />}
               </React.Fragment>
