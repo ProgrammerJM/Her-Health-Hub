@@ -28,9 +28,13 @@ export function ProductCard({
 }: ProductCardProps) {
   return (
     <Card className="flex overflow-hidden flex-col">
-      <div className="relative w-full h-auto aspect-video">
+      {/* <div className="relative w-full h-auto aspect-video">
         <Image src={imagePath} fill alt={name} />
+      </div> */}
+      <div className="relative w-full h-auto aspect-video">
+        <Image src={imagePath} alt={name} width={300} height={200} />
       </div>
+
       <CardHeader>
         <CardTitle>{name}</CardTitle>
         <CardDescription>{formatCurrency(priceInCents / 100)}</CardDescription>
