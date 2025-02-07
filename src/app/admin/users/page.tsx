@@ -30,10 +30,10 @@ function getUsers() {
 
 export default function UsersPage() {
   return (
-    <>
+    <div className="space-y-4">
       <PageHeader>Customers</PageHeader>
       <UsersTable />
-    </>
+    </div>
   );
 }
 
