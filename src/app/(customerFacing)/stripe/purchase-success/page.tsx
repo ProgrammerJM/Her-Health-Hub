@@ -61,7 +61,7 @@ export default async function SuccessPage({
             )}
           </Button> */}
           <Button className="mt-4" size="lg" asChild>
-            <Link href={`/`}>Go back</Link>
+            <Link href={`/products`}>Back to shop</Link>
           </Button>
         </div>
       </div>
