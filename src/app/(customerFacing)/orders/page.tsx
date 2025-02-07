@@ -17,7 +17,10 @@ import { useFormState, useFormStatus } from "react-dom";
 export default function MyOrdersPage() {
   const [data, action] = useFormState(emailOrderHistory, {});
   return (
-    <form action={action} className="max-2-xl mx-auto p-20 w-fit h-full">
+    <form
+      action={action}
+      className="max-2-xl mx-auto p-24 lg:p-28 md:p-24 sm:p-28 w-fit"
+    >
       <Card>
         <CardHeader>
           <CardTitle>My Orders</CardTitle>
