@@ -56,7 +56,7 @@ export async function addProduct(prevState: unknown, formData: FormData) {
 }
 
 const editSchema = addSchema.extend({
-  file: fileSchema.optional(),
+  // file: fileSchema.optional(),
   image: imageSchema.optional(),
 });
 
