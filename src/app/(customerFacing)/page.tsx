@@ -7,6 +7,7 @@ import { Product } from "@prisma/client";
 import { ArrowRight } from "lucide-react";
 import Link from "next/link";
 import { Suspense } from "react";
+import RelevantSites from "./_components/RelevantSites";
 
 const getMostPopularProducts = cache(
   () => {
@@ -32,15 +33,16 @@ export default function HomePage() {
   return (
     <>
       <Hero />
-      <main className="space-y-12 p-32">
-        <ProductGridSection
+      <main className="space-y-12">
+        <RelevantSites />
+        {/* <ProductGridSection
           title="Most Popular"
           productsFetcher={getMostPopularProducts}
         />
         <ProductGridSection
           title="Newest"
           productsFetcher={getNewestProducts}
-        />
+        /> */}
       </main>
     </>
   );
