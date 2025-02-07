@@ -78,6 +78,12 @@ function Form({
   const [isLoading, setIsLoading] = useState(false);
   const [errorMessage, setErrorMessage] = useState<string>();
   const [email, setEmail] = useState<string>();
+  const [address, setAddress] = useState({
+    street: "",
+    city: "",
+    state: "",
+    zip: "",
+  });
 
   async function handleSubmit(e: FormEvent) {
     e.preventDefault();
@@ -129,6 +135,44 @@ function Form({
           <div className="mt-4">
             <LinkAuthenticationElement
               onChange={(e) => setEmail(e.value.email)}
+            />
+          </div>
+          <div className="mt-4 space-y-4">
+            <input
+              type="text"
+              placeholder="Street Address"
+              value={address.street}
+              onChange={(e) =>
+                setAddress({ ...address, street: e.target.value })
+              }
+              aria-required
+              className="w-full p-2 border rounded"
+            />
+            <input
+              type="text"
+              placeholder="City"
+              value={address.city}
+              onChange={(e) => setAddress({ ...address, city: e.target.value })}
+              required
+              className="w-full p-2 border rounded"
+            />
+            <input
+              type="text"
+              placeholder="State"
+              value={address.state}
+              onChange={(e) =>
+                setAddress({ ...address, state: e.target.value })
+              }
+              aria-required
+              className="w-full p-2 border rounded"
+            />
+            <input
+              type="text"
+              placeholder="ZIP Code"
+              value={address.zip}
+              onChange={(e) => setAddress({ ...address, zip: e.target.value })}
+              aria-required
+              className="w-full p-2 border rounded"
             />
           </div>
         </CardContent>
