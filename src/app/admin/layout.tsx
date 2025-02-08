@@ -16,7 +16,7 @@ export default function AdminLayout({
         <NavLink href={"/admin/users"}>Customers</NavLink>
         <NavLink href={"/admin/orders"}>Sales</NavLink>
       </Nav>
-      <div className="w-full justify-center my-6 p-20">{children}</div>
+      <div className="w-full justify-center my-6 p-20 h-dvh">{children}</div>
     </>
   );
 }

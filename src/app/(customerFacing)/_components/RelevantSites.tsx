@@ -16,9 +16,9 @@ export default function RelevantSites() {
             </h1>
           </div>
         </CardHeader>
-        <CardContent>
-          <div className="grid lg:grid-cols-2 gap-8 space-x-4 items-center justify-items-center">
-            <div className="bg-gray-300 rounded-xl">
+        <CardContent className="flex items-center justify-center">
+          <div className="grid lg:grid-cols-2 gap-8 lg:gap-2 md:gap-6 sm:gap-6 items-center justify-items-center p-4 lg:p-8 md:p-6 w-[100%] ">
+            <div className="bg-gray-300 rounded-xl w-[80%]">
               <p className="text-wrap font-semibold text-lg p-8 text-black">
                 The origins of Pride Month trace back to a riot in June 1969, a
                 pivotal moment in LGBTQ+ history. These riotsmarked the

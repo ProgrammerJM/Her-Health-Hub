@@ -10,7 +10,7 @@ export default function OtherWebsites() {
         <CardHeader>
           <h1 className="font-bold text-3xl text-black">MENSTRUAL CYCLE</h1>
         </CardHeader>
-        <CardContent className="grid grid-col-2 sm:grid-col md:grid-col lg:grid-row  gap-4">
+        <CardContent className="grid grid-row-2 sm:grid-col md:grid-col lg:grid-col  gap-4">
           <Image
             src="/MenstrualCycle.jpg"
             alt="Menstrual Cycle"
